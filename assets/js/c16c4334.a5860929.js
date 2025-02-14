@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktesting_cusdec=self.webpackChunktesting_cusdec||[]).push([[8172],{6408:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/testing-cusdec/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
