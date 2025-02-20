@@ -1,0 +1,10 @@
+{
+  "tutorialSidebar": [
+    "changelog"
+  ],
+  "apiSidebar": [
+    "documents/doc3",
+    "documents/doc4",
+    "documents/commonDoc"
+  ]
+}

@@ -29,7 +29,22 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en','my'],
+    path:'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        path: 'en',
+      },
+      my: {
+        label: 'Bahasa Malaysia',
+        direction: 'ltr',
+        htmlLang: 'ms-MY',
+        path: 'my'
+      }
+    }
   },
 
   presets: [
@@ -41,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',  
         },
         blog: {
           showReadingTime: true,
@@ -66,6 +81,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+
+    sidebar: {
+      autoCollapseCategories: true,
+      hideable: true,
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -75,17 +95,24 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
+         {
+           type: 'docSidebar',
+           sidebarId: 'tutorialSidebar',
+           position: 'left',
+           label: 'Tutorial',
+         },
+         {
+          type: 'docsVersionDropdown',
+         },
+         {to: '/blog', label: 'Blog', position: 'left'},
+         {
+           href: 'https://github.com/facebook/docusaurus',
+           label: 'GitHub',
+           position: 'right',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+            type: "localeDropdown",
+            position: "left",
         },
       ],
     },
