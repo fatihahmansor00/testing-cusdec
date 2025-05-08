@@ -1,0 +1,71 @@
+---
+id: create-a-new-item
+title: "Create a new item"
+description: "Create a new item"
+sidebar_label: "Create a new item"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU8FynDAM/RVGZzfL9uhbkqYz6aWZ7GZ62OGgBRWcgu3YIuwOw793ZAjZpuECSE9P1nvWCIFeeop846oz6DH9mkAVaA49KSidZbIsKfS+NSWycXbzHJ2VWCwb6lC++OwJNLjjM5UM6oLoABY7gkKBD85TYENRKkx1UWcsU00BJjWj3zORg7E1TJMCNtxK6J6pg2mSUKDonY0z49d8K6+KYhmMl4OChttAyFRlZi5Sn6YzzCwNM0ZBR9y4CjR4F2UWj9yAho2kIyiIFF4pRNCHEfrQgoaG2evNpnUlto2LrLd5nsNUCLbsg+FzAh8JA4XrXugOxWV6J0LOU1yCVhWkgXROMNALCNTy8d2FDhk0/Pi1T0OKQY/v1t6dsPMtvcmev6m8qqvA2N8uNVxEvn18+pZdP9xng+Em2w1Y16mhTD5Lt73Kr3L4KOgNRlNma3Ufja2zu5MPFGOGtlqpJpX07TDdpOU8n9nxD/+qCNOJN75FY4Up2TAuTh1gdqpQIGZIYByPGOkptNMk4ZeeglhSKHjFYPAoIx+KSUFDWFFIbv2hs5xo3oAve2kr8LaX9v9tg7i5XpyHn7u9mLNsVecqqQk4yGbgABpAgUsjJc9TbIQWbd1jLdiZU56/k9A7sw==
+sidebar_class_name: "post api-method"
+info_path: crud/crud-api-with-swagger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/items"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"id":{"type":"integer"},"name":{"type":"string"}},"title":"Item"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created item"}}}
+>
+  
+</StatusCodes>
+
+
+      

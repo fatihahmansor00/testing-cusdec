@@ -1,0 +1,71 @@
+---
+id: delete-an-item-by-id
+title: "Delete an item by ID"
+description: "Delete an item by ID"
+sidebar_label: "Delete an item by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1ks1u2zAQhF+FmFMLEJFS5MRbWruAix6K/KAHQwdaXFtEJVIhqSSCwHcvVlINN21OIlezO5wPO6HXQXeUKESo/QTroNDr1EDC6Y6gYA0kAj0NNpCBSmEgiVg31GmoCWnsZ5VLdKKAnCtWx967SJEFn8ob/hiKdbB9sp4tdok6YailRAZZ4uZdkfNJHP3gDHKWbwSbeYDQTliWHkax20Cio9R4A4XFAHJJpFCwLBaTNRkSkcLzn9xDaKHQpNSromh9rdvGx6Suy7IEJ4pUD8GmcRYfSAcKtwPP3FeXv+8ZyxL7UnSmxAZY6fF9EUGuh68+dDpB4dvPhzmudUc/t9vUsv7L3eNG3P7YiRebGnH/ok+nuZ1zLEiur8qrEm9BfdbR1uLcPUTrTmL72geKUWhnzqOyRO9j6rRj23UD3sH8l8U5YqLXVPStto6HzVynlf8eM39IKGtQSTBjLk/TQUd6DG3OXH4aKDDpSuJZB6sPnH0/wdjIZwN11G2kf15Qe5fIMb8Pd+u+fhSQ/3/ZWtRuZH66HfgGiV80Lkufq3yxSpvt9+3DFjn/BuAwEN8=
+sidebar_class_name: "delete api-method"
+info_path: crud/crud-api-with-swagger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete an item by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/items/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete an item by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Item deleted"},"404":{"description":"Item not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

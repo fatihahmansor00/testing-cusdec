@@ -1,4 +1,3 @@
 ---
-id: doc4
-title: Manage Docs Versions
+title: Manage Docs Versions 4
 ---
