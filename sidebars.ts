@@ -1,4 +1,6 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import myciedssidebar from "./docs/mycieds/sidebar";
+import crudsidebar from "./docs/crud/sidebar";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -19,9 +21,52 @@ const sidebars: SidebarsConfig = {
   // But you can create a sidebar manually
   
   tutorialSidebar: [
-    'intro','changelog'
+    'intro',
+    {
+      type: 'category',
+      label: 'For Developers',
+      items:[
+        'changelog',
+        'documents/commonDoc',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'For Database Administrators',
+      items:[
+        'documents/doc3',
+        'documents/doc4',
+      ],
+    },
   ],
-  apiSidebar: ['documents/doc3', 'documents/doc4', 'documents/commonDoc'],
+  mycieds: [
+    {
+      type: "category",
+      label: "MyCIEDS",
+      link: {
+        type: "generated-index",
+        title: "MyCIEDS API",
+        description:
+        "This is a sample server MyCIEDS server. You can find out more about at ",
+        slug: "/category/mycieds-api",
+      },
+      items: myciedssidebar,
+    }
+  ],
+  crud: [
+    {
+      type: "category",
+      label: "CRUD",
+      link: {
+        type: "generated-index",
+        title: "CRUD API",
+        description:
+        "This is a sample server CRUD server. You can find out more about at ",
+        slug: "/category/crud-api",
+      },
+      items: crudsidebar,
+    }
+  ],
   
 };
 
