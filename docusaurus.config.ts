@@ -1,7 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
+import type * as Plugin from "@docusaurus/types/src/plugin";
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -10,10 +11,10 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: 'https://fatihahmansor00.github.io/testing-cusdec/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/testing-cusdec',
+  baseUrl: '/testing-cusdec/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -29,7 +30,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','my'],
+    locales: ['en','ms'],
     path:'i18n',
     localeConfigs: {
       en: {
@@ -46,46 +47,81 @@ const config: Config = {
       }
     }
   },
-
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          routeBasePath: "/",
+          sidebarPath: "./sidebars.ts",
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',  
+            "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs/tree/main/demo",
+          docItemComponent: "@theme/ApiItem",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
+        },
+        gtag: {
+          trackingID: "GTM-THVM29S",
+          anonymizeIP: false,
         },
       } satisfies Preset.Options,
     ],
   ],
 
-  themeConfig: {
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api", // plugin id
+        docsPluginId: "classic", // configured for preset-classic
+        config: {
+          crud: {
+            specPath: "examples/crud.yaml",
+            outputDir: "docs/crud",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          mycieds: {
+            specPath: "examples/swagger.json",
+            outputDir: "docs/mycieds",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          myciedscors: {
+            specPath: "https://localhost:44319/swagger/v1/swagger.json",
+            outputDir: "docs/myciedscors",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        }
+      },
+    ]
+  ],
+  themes: ["docusaurus-theme-openapi-docs"], // export theme components
 
+  themeConfig: {
+    announcementBar: {
+      id: 'support_us',
+      content:
+        'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: true,
+    },
+    colorMode: {
+      disableSwitch: false,
+    },
+    docs:{
     sidebar: {
       autoCollapseCategories: true,
       hideable: true,
     },
+  },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -101,10 +137,20 @@ const config: Config = {
            position: 'left',
            label: 'Tutorial',
          },
-         {
-          type: 'docsVersionDropdown',
-         },
          {to: '/blog', label: 'Blog', position: 'left'},
+         { to: '/swagger', label: 'API Docs', position: 'left' },
+         {
+          type: 'docSidebar',
+          sidebarId: 'mycieds',
+          label: "MyCIEDS",
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'crud',
+          label: "CRUD",
+          position: 'left',
+        },
          {
            href: 'https://github.com/facebook/docusaurus',
            label: 'GitHub',
@@ -165,7 +211,11 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+    api: {
+      authPersistance: "localStorage",
+      serverVariablesPersistance: "localStorage",
+    },
+  } satisfies Preset.ThemeConfig, 
 };
 
 export default config;
