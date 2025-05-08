@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktesting_cusdec=self.webpackChunktesting_cusdec||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/testing-cusdec/blog","blogTitle":"Blog","authorsListPath":"/testing-cusdec/blog/authors"}')}}]);

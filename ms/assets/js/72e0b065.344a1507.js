@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktesting_cusdec=self.webpackChunktesting_cusdec||[]).push([[45330],{36235:(e,t,s)=>{s.r(t),s.d(t,{default:()=>i});s(96540);var h=s(74848);function i(){return(0,h.jsx)("div",{style:{height:"100vh"},children:(0,h.jsx)("iframe",{src:"https://localhost:44319/swagger/index.html",width:"100%",height:"100%",style:{border:"none"},title:"Swagger UI"})})}}}]);
