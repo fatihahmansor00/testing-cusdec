@@ -11,7 +11,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://fatihahmansor00.github.io/testing-cusdec/',
+  url: 'https://fatihahmansor00.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/testing-cusdec/',
@@ -62,10 +62,7 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        gtag: {
-          trackingID: "GTM-THVM29S",
-          anonymizeIP: false,
-        },
+        
       } satisfies Preset.Options,
     ],
   ],
@@ -137,7 +134,6 @@ const config: Config = {
            position: 'left',
            label: 'Tutorial',
          },
-         {to: '/blog', label: 'Blog', position: 'left'},
          { to: '/swagger', label: 'API Docs', position: 'left' },
          {
           type: 'docSidebar',
@@ -165,15 +161,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
+        
         {
           title: 'Community',
           items: [
@@ -194,10 +182,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
